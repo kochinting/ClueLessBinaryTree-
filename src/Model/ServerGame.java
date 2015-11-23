@@ -10,27 +10,21 @@ package Model;
  */
 public class ServerGame {
 
-	private int value;
-	String Name= "Miss Scarlet";
-	String Weapon= "Rope";
-	String Location= "Lounge";
+	private String name= "Green";
 	
 	/**
 	 * @return the value
 	 */
-	public int getValue() {
-		return value;
+	public String getValue() {
+		return name;
 	}
 
 	/**
 	 * @param value the value to set
 	 */
-	public void setValue(int value) {
-		if (value<0){
-			this.value=0;
-			} else{
-			this.value = value;
-			}
+	public void setValue(String name) {
+			this.name = name;
+			
 	}
 
 

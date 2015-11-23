@@ -2,7 +2,11 @@
     pageEncoding="UTF-8"%>
    
 <%@ page import="Model.ServerGame" %>
-    
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="Model.Player" %> 
+<%@ page import="java.sql.ResultSet" %>
+  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,15 +15,36 @@
 </head>
 
 <%
-String Name= request.getParameter("name");
-String Character= request.getParameter("character");
+/*
+if (request.getParameter("indexSubmit")!=null){
+	
+int result=0;
+String playerName= new String();
+String playerCharacter= new String();
+
+playerName= request.getParameter("name1");
+playerCharacter= request.getParameter("character1");
+
+Player player = new Player();
+result= player.setPlayers(playerName, playerCharacter);
+ResultSet players= player.getPlayers();
+
+}
+*/
 String Location= request.getParameter("location");
+ServerGame test= new ServerGame();
+String Name1= test.getValue();
+System.out.println(Name1);
 
 %>
 
+		
 <body bgcolor="#BED661">
 <h1>Clue-Less Demo by Binary Tree</h1>
-<p>Welcome <%=Name %>! You are <%=Character %> </p>
+
+
+<p>Welcome ! You are </p>
+
 <p>Your location is <%=Location %> </p>
 
 <form name="playerMove" action="guess.jsp" method="post" >
@@ -29,7 +54,7 @@ String Location= request.getParameter("location");
 			<td>Make Your Move: </td>
 			<td>
 			<select name="location">
-			<option value="Lounge">Lounge</option>
+			<option value="<%=Location %>"><%=Location %></option>
 			<option value="Hall">Hall</option>
 			</select>
 			</td>
@@ -40,64 +65,10 @@ String Location= request.getParameter("location");
 </form>
 <p></p>
 
-<form name="makeSuggestion" action="win.jsp" method="post" >
-	<table>
-		<tbody>		
-		<tr>
-			<td>Suspect: </td>
-			<td>
-			<select name="suspect1">
-			<option value="Miss Scarlet">Miss Scarlet</option>
-			<option value="Col. Mustard">Col. Mustard</option>
-			<option value="Mrs. White">Mrs. White</option>
-			<option value="Mr. Green">Mr. Green</option>
-			<option value="Ms. Peacock">Ms. Peacock</option>
-			<option value="Pro. Plum">Pro. Plum</option>
-			</select>
-			</td>
-		</tr>
-		</tbody>
-		<tbody>		
-		<tr>
-			<td>Weapon: </td>
-			<td>
-			<select name="weapon1">
-			<option value="Rope">Rope</option>
-			<option value="Lead Pipe">Lead Pipe</option>
-			<option value="Knife">Knife</option>
-			<option value="Wrench">Wrench</option>
-			<option value="Candlestick">Candlestick</option>
-			<option value="Revolver">Revolver</option>
-			</select>
-			</td>
-		</tr>
-		</tbody>
-				<tbody>		
-		<tr>
-			<td>Room: </td>
-			<td>
-			<select name="room1">
-			<option value="Lounge">Lounge</option>
-			<option value="Hall">Hall</option>
-			<option value="Study">Study</option>
-			<option value="Library">Library</option>
-			<option value="Billiard Room">Billiard Room</option>
-			<option value="Dining Room">Dining Room</option>
-			<option value="Conservatory">Conservatory</option>
-			<option value="Ballroom">Ballroom</option>
-			<option value="Kitchen">Kitchen</option>
-			</select>
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	<p></p>
-	<input type="reset" value="Clear" name="clear"/>
-	<input type="submit" value="Suggestion" name="suggestion"/>
-	<input type="submit" value="Accusation" name="acussation"/>
-</form>
-<p></p>
+<input type="hidden" value="Name" name="name"/>
+<input type="hidden" value="Character" name="character"/>
 
+<jsp:include page="suggestion.jsp"/>
 <jsp:include page="gamestatus.jsp"/>
 
 
