@@ -9,21 +9,20 @@
 
 <%
 String playerName= request.getParameter("playerName");
+//int playerCharacter= Integer.parseInt(request.getParameter("playerCharacter"));
+String location= request.getParameter("location");
 String suspect= request.getParameter("suspect");
 String weapon= request.getParameter("weapon");
 String room= request.getParameter("room");
+
 %>
 
 <body bgcolor="#BED661">
-<h1> Congratulations! You win!</h1>
-<h2>You accused: </h2>
-<h2><%=suspect %> of committing the crime in the <%=room %> with the <%=weapon %>. </h2>
+<h1>You accused: </h1>
+<h1><%=suspect %> of committing the crime in the <%=room %> with the <%=weapon %>. </h1>
 <p></p>
-<img src="http://cdn.meme.am/instances/500x/65133469.jpg">
 <p></p>
-<form name="index" action="index.jsp" method="post" >
-	<input type="submit" value="Restart the Game!" name="restart"/>
-</form>
+
 
 </body>
 </html>

@@ -13,14 +13,6 @@
 <title>Game Status</title>
 </head>
 
-<%
-
-String Name= request.getParameter("name");
-String Character= request.getParameter("character");
-String Location= request.getParameter("location");
-
-%>
-
 <% 
 	Player player = new Player();
 	ResultSet players= player.getPlayers();
@@ -35,15 +27,11 @@ String Location= request.getParameter("location");
 	<table border="2">
 		<tbody>
 			<tr>
-				<td>id</td>
-				<td>Player</td>
 				<td>Character</td>
 				<td>Location</td>
 			</tr>	
 			<% while (players.next()) { %>
 			<tr>
-				<td><%= players.getInt("ID") %></td>
-				<td><%= players.getString("NAME")%></td>
 				<td><%= players.getString("CHARACTER")%></td>
 				<td><%= players.getString("LOCATION")%></td>
 			</tr>
@@ -52,7 +40,7 @@ String Location= request.getParameter("location");
 	</table>
 	
 <p></p>	
-
+<!--  
 <p>Weapon Status:</p>
 	<table border="2">
 		<tbody>
@@ -69,10 +57,8 @@ String Location= request.getParameter("location");
 			<% }%>	
 		</tbody>
 	</table>
-	
+-->
 <p></p>	
-
-<img src="http://info.articleonepartners.com/wp-content/uploads/2013/06/Clue.jpg">
 
 </body>
 </html>

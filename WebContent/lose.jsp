@@ -8,21 +8,28 @@
 </head>
 
 <%
-String Name= request.getParameter("name");
-String suspect= request.getParameter("suspect1");
-String weapon= request.getParameter("weapon1");
-String room= request.getParameter("room1");
+String playerName= request.getParameter("playerName");
+String suspect1= request.getParameter("suspect");
+String weapon1= request.getParameter("weapon");
+String location= request.getParameter("location");
+
+System.out.println(suspect1);
+System.out.println(weapon1);
+
 %>
 
 <body bgcolor="#BED661">
-<p> Oops! You lose!</p>
+<h1> Sorry <%= playerName%>, you lose!</h1>
 <p>You accused: </p>
-<p><%=suspect %> of committing the crime in the <%=room %> with the <%=weapon %>. </p>
+<p><%=suspect1 %> of committing the crime in the <%=location %> with the <%=weapon1 %>. </p>
 <p></p>
 <img src="http://cdn.meme.am/instances/500x/53286795.jpg">
 <p></p>
 <form name="index" action="index.jsp" method="post" >
 	<input type="submit" value="Restart the Game!" name="restart"/>
+	<input name="suspect" type="hidden" value="suspect"/>
+	<input name="weapon" type="hidden" value="weapon"/>
+	<input name="location" type="hidden" value="location"/>
 </form>
 
 </body>

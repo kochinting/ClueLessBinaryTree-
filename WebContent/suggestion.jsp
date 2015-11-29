@@ -11,26 +11,47 @@
 </head>
 
 <%
-String Name= request.getParameter("name");
-String Character= request.getParameter("character");
-String Location= request.getParameter("location");
-
+String playerName= request.getParameter("playerName");
+int playerCharacter= Integer.parseInt(request.getParameter("playerCharacter"));
+String location= request.getParameter("location");
+String suspect= request.getParameter("suspect");
+String weapon= request.getParameter("weapon");
+String room= request.getParameter("room");
 %>
+suggestcheck.jsp?playerName=<%= playerName %>&playerCharacter=<%= playerCharacter %>&suspect=<%= suspect %>&weapon=<%= weapon %>&room=<%= room %>
 
 <body bgcolor="#BED661">
-<form name="makeSuggestion" action="guess.jsp" method="post" >
+<form name="makeSuggestion" action="suggestcheck.jsp" method="get" >
 	<table>
+		<tbody>		
+		<tr>
+			<td>Room: </td>
+			<td>
+			<select name="room">
+			<option value="Study">Study</option>
+			<option value="Hall">Hall</option>
+			<option value="Lounge">Lounge</option>
+			<option value="DiningRoom">DiningRoom</option>
+			<option value="Kitchen">Kitchen</option>
+			<option value="Ballroom">Ballroom</option>
+			<option value="Conservatory">Conservatory</option>
+			<option value="Library">Library</option>
+			<option value="BilliardRoom">BilliardRoom</option>
+			</select>
+			</td>
+		</tr>
+		</tbody>
 		<tbody>		
 		<tr>
 			<td>Suspect: </td>
 			<td>
-			<select name="suspect1">
-			<option value="Miss Scarlet">Miss Scarlet</option>
-			<option value="Col. Mustard">Col. Mustard</option>
-			<option value="Mrs. White">Mrs. White</option>
-			<option value="Mr. Green">Mr. Green</option>
-			<option value="Ms. Peacock">Ms. Peacock</option>
-			<option value="Pro. Plum">Pro. Plum</option>
+			<select name="suspect">
+			<option value="Scarlet">Miss Scarlet</option>
+			<option value="Mustard">Col. Mustard</option>
+			<option value="White">Mrs. White</option>
+			<option value="Green">Mr. Green</option>
+			<option value="Peacock">Ms. Peacock</option>
+			<option value="Plum">Pro. Plum</option>
 			</select>
 			</td>
 		</tr>
@@ -39,7 +60,7 @@ String Location= request.getParameter("location");
 		<tr>
 			<td>Weapon: </td>
 			<td>
-			<select name="weapon1">
+			<select name="weapon">
 			<option value="Rope">Rope</option>
 			<option value="Lead Pipe">Lead Pipe</option>
 			<option value="Knife">Knife</option>
@@ -50,24 +71,66 @@ String Location= request.getParameter("location");
 			</td>
 		</tr>
 		</tbody>
+	</table>
+	<input type="reset" value="Clear" name="clear"/>
+	<input type="submit" value="Make Suggestion" name="suggestion"/>
+</form>
+<p></p>
+
+<form name="makeAccusation" action="win.jsp" method="get" >
+	<table>
 		<tbody>		
 		<tr>
-			<td>Location: </td>
+			<td>Room: </td>
 			<td>
-			<select name="location1">
-			<option ><%=Location %></option>
+			<select name="room">
+			<option value="Study">Study</option>
+			<option value="Hall">Hall</option>
+			<option value="Lounge">Lounge</option>
+			<option value="DiningRoom">DiningRoom</option>
+			<option value="Kitchen">Kitchen</option>
+			<option value="Ballroom">Ballroom</option>
+			<option value="Conservatory">Conservatory</option>
+			<option value="Library">Library</option>
+			<option value="BilliardRoom">BilliardRoom</option>
+			</select>
+			</td>
+		</tr>
+		</tbody>
+		<tbody>		
+		<tr>
+			<td>Suspect: </td>
+			<td>
+			<select name="suspect">
+			<option value="Scarlet">Miss Scarlet</option>
+			<option value="Mustard">Col. Mustard</option>
+			<option value="White">Mrs. White</option>
+			<option value="Green">Mr. Green</option>
+			<option value="Peacock">Ms. Peacock</option>
+			<option value="Plum">Pro. Plum</option>
+			</select>
+			</td>
+		</tr>
+		</tbody>
+		<tbody>		
+		<tr>
+			<td>Weapon: </td>
+			<td>
+			<select name="weapon">
+			<option value="Rope">Rope</option>
+			<option value="Lead Pipe">Lead Pipe</option>
+			<option value="Knife">Knife</option>
+			<option value="Wrench">Wrench</option>
+			<option value="Candlestick">Candlestick</option>
+			<option value="Revolver">Revolver</option>
 			</select>
 			</td>
 		</tr>
 		</tbody>
 	</table>
-	<p></p>
-
-	<input type="radio" value="Suggested" name="action" checked>Suggestion
-	<input type="radio" value="Accused" name="action">Accusation
-	<input type="reset" value="Clear" name="clear">
-	<INPUT TYPE=SUBMIT VALUE="submit">
-	
+	<input type="reset" value="Clear" name="clear"/>
+	<input type="submit" value="Make Accusation" name="accusation"/>
 </form>
+
 </body>
 </html>
