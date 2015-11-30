@@ -16,15 +16,19 @@
 <% 
 	Player player = new Player();
 	ResultSet players= player.getPlayers();
-	
 	Weapon weapon = new Weapon();
 	ResultSet weapons= weapon.getWeapons();
 %>
+<Style>
+#right {
+    text-align:right;
+}
+</Style>
 
 <body bgcolor="#BED661">
-
-<p>Player Status:</p>
-	<table border="2">
+<div id="right">
+<h3>Player Status:</h3>
+	<table bgcolor="#89E3F0" align="right" border="2">
 		<tbody>
 			<tr>
 				<td>Character</td>
@@ -38,11 +42,17 @@
 			<% }%>	
 		</tbody>
 	</table>
-	
-<p></p>	
-<!--  
-<p>Weapon Status:</p>
-	<table border="2">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>Weapon Status:</h3>
+	<table bgcolor="#FA8072" align="right" border="2">
 		<tbody>
 			<tr>
 				<td>Weapon</td>
@@ -57,7 +67,231 @@
 			<% }%>	
 		</tbody>
 	</table>
--->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>Clue Detective Sheets: </h3>
+<table bgcolor="#DEB887" align="right" border="2">
+		<tbody>	
+			<tr>
+			    <th>Suspects: </th>
+				<th bgcolor="#FF0000"></th>
+				<th bgcolor="#FFFF00"></th>
+				<th bgcolor="#FFFFFF"></th>
+				<th bgcolor="#008000"></th>
+				<th bgcolor="#0000FF"></th>
+                <th bgcolor="#800080"></th>
+			</tr>	
+			<tr>
+				<td>Miss Scarlet</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Col. Mustard</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Mrs. White</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Mr. Green</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Ms. Peacock</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Pro. Plum</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<th>Weapons: </th>
+			</tr>	
+			
+			<tr>
+				<td>Rope</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Lead Pipe</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Knife</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Wrench</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Candlestick</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Revolver</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<th>Rooms: </th>
+			</tr>	
+			<tr>
+				<td>Study</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Hall</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Lounge</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>DiningRoom</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Kitchen</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Ballroom</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+						<tr>
+				<td>Conservatory</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Library</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>BilliardRoom</td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+				<td><input type="checkbox"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
 <p></p>	
 
 </body>

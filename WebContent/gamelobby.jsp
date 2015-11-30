@@ -14,16 +14,41 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Clue-Less Demo by Binary Tree</title>
 </head>
+<style>
 
+#header {
+    background-color:DarkGreen;
+    color:white;
+    text-align:center;
+    padding:1px;
+}
+#section {    
+text-align:center;
+}
+#footer {
+    background-color:DarkGreen;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+</style>
 
 <%
-String playerName= request.getParameter("name1");
-int playerCharacter= Integer.parseInt(request.getParameter("character1"));
+
+ServerGame server= new ServerGame();
+int card1= server.randomCard();
+int card2= server.randomCard();
+int card3= server.randomCard();
+System.out.println(card1);
+System.out.println(card2);
+System.out.println(card3);
+
+String playerName= request.getParameter("playerName");
+String playerCharacter= request.getParameter("playerCharacter");
 Player player = new Player();
 
 String location= request.getParameter("location");
-ServerGame test= new ServerGame();
-String Name1= test.getValue();
 
 	String URL="jdbc:mysql://localhost:3306/ClueLessBinaryTree";
 	String USERNAME= "root";
@@ -60,77 +85,77 @@ String Name1= test.getValue();
 
 %>
 <body bgcolor="#BED661">
-<h1>Clue-Less Demo by Binary Tree</h1>
-
-<h2>Welcome <%=playerName%> !</h2>
-
+<div id="header">
+<h2>Clue-Less Board Game Demo </h2>  
+<h3>Welcome <%=playerName%> !</h3>
+</div>
+<div id="section">
 <%  
-	if (playerCharacter==0){
+	if (playerCharacter.equals("Scarlet")){
 	resultSet0=selectPlayer0.executeQuery();
 	resultSet0.next();
 	String usercharacter=resultSet0.getString("CHARACTER");
 	location=resultSet0.getString("LOCATION");%>
-<p>You are <%= usercharacter%></p>
+<h2>You are <%= usercharacter%></h2>
 <img src= "http://www.cluedofan.com/cards/uscScarlet92.jpg">
 <% }%>
 
-<% if (playerCharacter==1){
+<% if (playerCharacter.equals("Mustard")){
 	resultSet1=selectPlayer1.executeQuery();
 	resultSet1.next();		
 	location=resultSet1.getString("LOCATION");%>
-<p>You are <%=resultSet1.getString("CHARACTER")%></p>
+<h2>You are <%=resultSet1.getString("CHARACTER")%></h2>
 <img src= "http://www.cluedofan.com/cards/uscMustard92.jpg">
 <% }%>
 
-<%  if (playerCharacter==2){
+<%  if (playerCharacter.equals("White")){
 	resultSet2=selectPlayer2.executeQuery();
 	resultSet2.next();
 	location=resultSet2.getString("LOCATION");%>
-<p>You are <%=resultSet2.getString("CHARACTER")%></p>
+<h2>You are <%=resultSet2.getString("CHARACTER")%></h2>
 <img src= "http://www.cluedofan.com/cards/uscWhite92.jpg">
 <% }%>
 
-<% if (playerCharacter==3){
+<% if (playerCharacter.equals("Green")){
 	resultSet3=selectPlayer3.executeQuery();
 	resultSet3.next();
 	location=resultSet3.getString("LOCATION");%>
-<p>You are <%=resultSet3.getString("CHARACTER")%></p>
+<h2>You are <%=resultSet3.getString("CHARACTER")%></h2>
 <img src= "http://www.cluedofan.com/cards/uscGreen92.jpg">
 <% }%>
 
-<% if (playerCharacter==4){
+<% if (playerCharacter.equals("Peacock")){
 	resultSet4=selectPlayer4.executeQuery();
 	resultSet4.next();
 	location=resultSet4.getString("LOCATION");%>
-<p>You are <%=resultSet4.getString("CHARACTER")%></p>
+<h2>You are <%=resultSet4.getString("CHARACTER")%></h2>
 <img src= "http://www.cluedofan.com/cards/uscPeacock92.jpg">
 <% }%>
 
-<% if (playerCharacter==5){
+<% if (playerCharacter.equals("Plum")){
 	resultSet5=selectPlayer5.executeQuery();
 	resultSet5.next();
 	location=resultSet5.getString("LOCATION");%>
-<p>You are <%=resultSet5.getString("CHARACTER")%></p>
+<h2>You are <%=resultSet5.getString("CHARACTER")%></h2>
 <img src= "http://www.cluedofan.com/cards/uscPlum92.jpg">
 <% }%>
 
+<h2>Please wait others join... </h2>
 
-<p>Please wait others join... </p>
-
-<form name="playerMove" action="game.jsp?playerName=<%= playerName %>&playerCharacter=<%= playerCharacter %>&location=<%= location %>" method="post" >
+<form name="playerMove" action="game.jsp?playerName=<%= playerName %>&playerCharacter=<%= playerCharacter %>&location=<%= location %>&card1=<%= card1 %>&card2=<%= card2 %>&card3=<%= card3 %>" method="post" >
 	<input type="submit" value="Start the Game!" name="submit"/>
 </form>
-<input name="playerName" type="hidden" value="playerName"/>
-<input name="playerCharater" type="hidden" value="playerCharacter"/>
-<input name="location" type="hidden" value="location"/>
 <p></p>
 
+</div>
 <%
-System.out.println(Name1);
 System.out.println(playerName);
 System.out.println(playerCharacter);
 System.out.println(location);
 %>
 
+<div id="footer">
+Copyright ©2015 Binary Tree. All Rights Reserved.
+</div>
 </body>
 </html>

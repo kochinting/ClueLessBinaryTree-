@@ -3,6 +3,7 @@
  */
 package Model;
 
+import java.util.Random;
 
 /**
  * @author Chin-Ting Ko
@@ -10,23 +11,27 @@ package Model;
  */
 public class ServerGame {
 
-	private String name= "Green";
+	private String suspectSolution= "Professor Plum";
 	
-	/**
-	 * @return the value
-	 */
-	public String getValue() {
-		return name;
+	public int randomCard() {
+		Random rand = new Random();
+		int  n = rand.nextInt(20) + 1;
+		return n;
+	}
+	
+	public String getsuspectSolution() {
+		return suspectSolution;
 	}
 
-	/**
-	 * @param value the value to set
-	 */
-	public void setValue(String name) {
-			this.name = name;
-			
+	private String weaponSolution= "Revolver";
+
+	public String getweaponSolution() {
+		return weaponSolution;
 	}
+	private String roomSolution= "Study";
 
-
-	
+	public String getroomSolution() {
+		return roomSolution;
+	}
 }
+
