@@ -50,9 +50,9 @@ Player player = new Player();
 
 String location= request.getParameter("location");
 
-	String URL="jdbc:mysql://localhost:3306/ClueLessBinaryTree";
-	String USERNAME= "root";
-	String PASSWORD= "root";
+String URL="jdbc:mysql://cluelessbinarytree.cyfolv83fu3j.us-west-2.rds.amazonaws.com:3306/ClueLessBinaryTree";
+String USERNAME= "BinaryTree";
+String PASSWORD= "BinaryTree";
 	Connection connection=null;
 	PreparedStatement insertPlayers= null;
 	PreparedStatement selectPlayers= null;

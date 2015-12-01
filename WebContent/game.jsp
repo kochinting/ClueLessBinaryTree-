@@ -55,9 +55,9 @@ int card1= Integer.parseInt(request.getParameter("card1"));
 int card2= Integer.parseInt(request.getParameter("card2"));
 int card3= Integer.parseInt(request.getParameter("card3"));
 
-String URL="jdbc:mysql://localhost:3306/ClueLessBinaryTree";
-String USERNAME= "root";
-String PASSWORD= "root";
+String URL="jdbc:mysql://cluelessbinarytree.cyfolv83fu3j.us-west-2.rds.amazonaws.com:3306/ClueLessBinaryTree";
+String USERNAME= "BinaryTree";
+String PASSWORD= "BinaryTree";
 Connection connection=null;
 PreparedStatement movePlayer= null;
 ResultSet resultSet= null;
@@ -329,7 +329,7 @@ String lose= "lose.jsp";
 </form>
 <p></p>
 
-<form name="makeAccusation" action="lose.jsp" method="get" >
+<form name="makeAccusation" action="win.jsp" method="get" >
 	<table>
 		<tbody>		
 		<tr>
